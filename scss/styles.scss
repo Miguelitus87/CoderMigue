@@ -1,12 +1,12 @@
 $color-fondo-bloques: white;
-$color-fondo-contactos: wheat;
-$color-fondo-contactos-movil: rgb(0, 225, 255);
-$color-fondo-perfiles: wheat;
-$color-fondo-perfiles-movil: rgb(0, 225, 255);
-$color-gradiente: black;
+$color-fondo-contactos: rgb(152, 193, 255);
+$color-fondo-contactos-movil: rgb(152, 193, 255);
+$color-fondo-perfiles: rgb(152, 193, 255);
+$color-fondo-perfiles-movil: rgb(152, 193, 255);
+$color-gradiente: rgb(152, 193, 255);
 $color-gradiente-2: white;
-$color-gradiente-movil: rgb(0, 225, 255);
-$color-letra-header: lightgoldenrodyellow;
+$color-gradiente-movil: rgb(152, 193, 255);
+$color-letra-header: black;
 $color-letra-comun: black;
 $color-letra-perfiles: black;
 $color-letra-footer: black;
@@ -16,7 +16,6 @@ body {
 }
 
 .grid {
-    /*width: auto;*/
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
@@ -50,12 +49,17 @@ header {
     grid-area: header;
     color: $color-letra-header;
     font-family: 'Josefin Sans', sans-serif;
-    text-align: center;
     line-height: 10px;
     letter-spacing: 2px;
     background-image: url("./Multimedia/img-header.jpg");
     background: linear-gradient(to right, $color-gradiente, $color-gradiente-2);
 
+
+    #titulo {
+        margin-top: 30px;
+        margin-left: 30px;
+        font-size: 40px;
+    }
     #subtitulo {
         animation-duration: 17s;
         animation-name: parpadeo;
@@ -91,6 +95,30 @@ header {
         height: 250px;
         width: 250px;
     }
+
+    .cabecera__principal {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+    }
+
+    .cabecera__izquierda {
+        text-align: center;
+        justify-content: center;
+        width: 50%;
+        height: auto;
+        flex-direction: column;
+        margin-top: 35px;
+    }
+
+    .cabecera__derecha {
+        width: 50%;
+        height: auto;
+        display: flex;
+
+    }
 }
 
 @media screen and (max-width: 667px) {
@@ -104,13 +132,20 @@ header {
         letter-spacing: 2px;
         background-image: url("./Multimedia/img-header.jpg");
         background: linear-gradient(to right, $color-gradiente, $color-gradiente-2);
-
     }
 }
 
 #home {
     grid-area: home;
     background-color: $color-fondo-bloques;
+
+}
+
+#homeContactos {
+    grid-area: home;
+    background-color: $color-fondo-bloques;
+    flex-direction: row;
+    display: flex;
 }
 
 div {
@@ -204,11 +239,13 @@ footer {
     width: 100%;
     height: auto;
     background-image: none;
+    flex-direction: row;
+    justify-content: left;
 
     .divFormulario {
         display: flex;
         background-color: $color-fondo-contactos;
-        width: 50%;
+        width: 100%;
         flex-direction: row;
         justify-content: center;
     }
